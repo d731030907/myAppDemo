@@ -1,0 +1,22 @@
+<ion-view view-title="健康">
+    <ion-header-bar align-title="center" class="bar-positive">
+        <h1 class="title">健康</h1>
+    </ion-header-bar>
+    <ion-content class="has-header">
+        <ion-slide-box show-pager="false" class="has-header" on-slide-changed="slideChanged($index)">
+            <ion-slide ng-repeat="slide in slides">
+                <div class="list">
+                    <a ng-repeat="item in items" class="item item-thumbnail-left" href="#">
+                        <img ng-src="{{imgUrl+item.img}}" width="30" height="30" alt="">
+                        <h2>{{item.title}}</h2>
+                        <p>{{item.description | substring:item.description}}</p>
+                        <p>{{item.time|date}}</p>
+                    </a>
+                </div>
+            </ion-slide>
+        </ion-slide-box>
+    </ion-content>
+    <ion-tabs class="tabs-striped tabs-top">
+        <ion-tab ng-repeat="item in tabs" on-select="selectedTab($index)" title="{{item.name}}"></ion-tab>
+    </ion-tabs>
+</ion-view>
