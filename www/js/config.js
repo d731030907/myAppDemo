@@ -1,10 +1,15 @@
-'use strict';
-var app=angular.module("starter.filter",[]);
-app.filter("substring",function(){
-    return function(str){
-        if(str.length>=40){
-            return str.substr(0,40)+"...";
-        }
-        return str;
-    }
-});
+var server = {
+    domain : "http://www.tngou.net/api",
+    imgUrl : "http://tnfs.tngou.net/image"
+};
+
+var urls = {
+    info_show:server.domain+"/info/show?id="
+};
+var settings = {
+    rows : 10
+};
+
+var cache = {
+    user: "TongeNews"
+};
